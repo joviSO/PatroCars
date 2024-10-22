@@ -1,7 +1,7 @@
 databases:
-  - name: PatroCars
-    databaseName: PatroCars
-    user: joviSO
+  - name: patro_cars_development
+    databaseName: patro_cars_development
+    user: postgres
     plan: free
 
 services:
