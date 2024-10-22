@@ -15,18 +15,3 @@
  */
 
 @import "bootstrap";
-
-.card-custom {
-  background-color: #28a745; /* Cor de fundo verde */
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transições para sombra e transformação */
-  border: none; /* Remover bordas para um visual mais limpo */
-}
-
-.card-custom:hover, .card-custom:focus {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
-  transform: translateY(-8px); /* Elevação mais perceptível */
-}
-
-body {
-  background-color: red !important; // Altera o fundo da página para vermelho
-}
