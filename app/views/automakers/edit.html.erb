@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Editar Fabrica</h1>
+
+  <%= render "form", automaker: @automaker %>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-auto">
+      <%= link_to "Mostrar essa Fabrica", @automaker, class: "btn btn-outline-success"%>
+    </div>
+    <div class="col-md-auto">
+      <%= button_to "Lista de Fabricas", automakers_path, method: :get, class: "btn btn-outline-success" %>
+    </div>
+  </div>
+</div>

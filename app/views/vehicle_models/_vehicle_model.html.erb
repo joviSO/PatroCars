@@ -1,0 +1,30 @@
+<div id="<%= dom_id vehicle_model %>" class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title bg-danger text-white p-2 rounded"><%= vehicle_model.name %></h5>
+
+    <p class="card-text">
+      <strong>Fabricante:</strong>
+      <%= vehicle_model.automaker.name %>
+    </p>
+
+    <p class="card-text">
+      <strong>Valor de referência:</strong>
+      <%= number_to_currency(vehicle_model.reference_value, unit: 'R$') %>
+    </p>
+
+    <p class="card-text">
+      <strong>Tamanho do motor:</strong>
+      <%= vehicle_model.engine_size %>
+    </p>
+
+    <p class="card-text">
+      <strong>Turbo:</strong>
+      <%= vehicle_model.turbo ? 'Sim' : 'Não' %>
+    </p>
+
+    <p class="card-text">
+      <strong>Automático:</strong>
+      <%= vehicle_model.automatic ? 'Sim' : 'Não' %>
+    </p>
+  </div>
+</div>

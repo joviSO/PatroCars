@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  automaker_id: 1
+  reference_value: 9.99
+  engine_size: 9.99
+  turbo: false
+  automatic: false
+
+two:
+  name: MyString
+  automaker_id: 1
+  reference_value: 9.99
+  engine_size: 9.99
+  turbo: false
+  automatic: false

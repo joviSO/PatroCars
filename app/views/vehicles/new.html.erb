@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Cadastro de Veículo</h1>
+
+  <%= render "form", vehicle: @vehicle %>
+
+  <br>
+
+  <div>
+    <%= button_to "Listagem de Veiculos", vehicles_path, method: :get, class: "btn btn-outline-success" %>
+  </div>
+</div>

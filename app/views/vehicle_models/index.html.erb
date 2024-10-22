@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <h1 class="text-center text-danger mb-4">Modelos</h1>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <% @vehicle_models.each_slice(5) do |vehicle_model_row| %>
+      <div class="row justify-content-center mb-3">
+        <% vehicle_model_row.each do |vehicle_model| %>
+          <div class="col-md-2">
+            <%= link_to vehicle_model_path(vehicle_model), class: "card-link" do %>
+              <div class="card card-custom" style="width: 100%;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= vehicle_model.name %></h5>
+                  <p class="card-text">
+                    <strong>Fabricante:</strong> <%= vehicle_model.automaker.name %><br>
+                    <strong>Valor Base:</strong> <%= number_to_currency(vehicle_model.reference_value, unit: 'R$') %><br>
+                    <strong>Motor:</strong> <%= vehicle_model.engine_size %> <br>
+                    <strong>Turbo:</strong> <%= vehicle_model.turbo ? 'Sim' : 'Não' %><br>
+                    <strong>Automático:</strong> <%= vehicle_model.automatic ? 'Sim' : 'Não' %><br>
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center mb-4">
+    <%= button_to "Cadastrar Modelo", new_vehicle_model_path, class: "btn btn-success mb-2", method: :get %>
+    <%= button_to "Veículos", vehicles_path, class: "btn btn-success mb-2", method: :get %>
+    <%= button_to "Fábricas", automakers_path, class: "btn btn-success", method: :get %>
+  </div>
+</div>

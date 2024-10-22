@@ -1,0 +1,59 @@
+<%= form_with(model: vehicle) do |form| %>
+  <% if vehicle.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+      <ul>
+        <% vehicle.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <div class="row">
+      <div class="col-md-6">
+        <%= form.label "Modelo do Veículo", class: "form-label" %>
+        <%= form.collection_select :vehicle_model_id, VehicleModel.all, :id, :name, { prompt: "Selecione um modelo" }, class: "form-select" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= form.label :color, "Cor", class: "form-label" %>
+        <%= form.text_field :color, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="row">
+      <div class="col-md-6">
+        <%= form.label "Ano de Fabricação", class: "form-label" %>
+        <%= form.text_field :manufacturing_year, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= form.label "Preço", class: "form-label" %>
+        <%= form.text_field :value, class: "form-control", placeholder: "R$" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="row">
+      <div class="col-md-6">
+        <%= form.label "Emplacamento", class: "form-label" %>
+        <%= form.text_field :license_plate, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= form.label "Vendido?", class: "form-label" %>
+        <%= form.check_box :sold, class: "form-check-input" %>
+        <%= form.label :sold, "Sim", class: "form-check-label" %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit "Cadastrar Veículo", class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>

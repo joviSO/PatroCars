@@ -1,0 +1,26 @@
+<div id="<%= dom_id automaker %>" class="card mb-3">
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0">Detalhes do Fabricante</h5>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title"><%= automaker.name %></h5>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-1">
+          <strong>País:</strong> <%= automaker.country %>
+        </p>
+        <p class="mb-1">
+          <strong>Ano de Fundação:</strong> <%= automaker.fundation_year %>
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="mb-1">
+          <strong>Veículos:</strong> <%= automaker.vehicles.count %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

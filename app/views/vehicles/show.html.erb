@@ -1,0 +1,21 @@
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+
+  <%= render @vehicle %>
+
+  <div>
+    <div class="mb-3">
+      <div class="row">
+        <div class="col-md-auto">
+          <%= link_to "Editar Veiculo", edit_vehicle_path(@vehicle), class: "btn btn-outline-success" %>
+        </div>
+
+        <div class="col-md-auto">
+          <%= link_to "Listar Veiculos", vehicles_path, class: "btn btn-outline-success" %>
+        </div>
+      </div>
+    </div>
+
+    <%= button_to "Deletar Registro", @vehicle, method: :delete, class: "btn btn-danger" %>
+  </div>
+</div>

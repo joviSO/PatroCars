@@ -1,0 +1,49 @@
+<%= form_with(model: vehicle_model) do |form| %>
+  <% if vehicle_model.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(vehicle_model.errors.count, "error") %> prohibited this vehicle model from being saved:</h2>
+      <ul>
+        <% vehicle_model.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <%= form.label "Nome", class: "form-label" %>
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+    <div class="col-md-6">
+      <%= form.label "Fabrica", class: "form-label" %>
+      <%= form.number_field :automaker_id, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <%= form.label "Valor de Referencia", class: "form-label" %>
+      <%= form.text_field :reference_value, class: "form-control" %>
+    </div>
+    <div class="col-md-6">
+      <%= form.label "Motor", class: "form-label" %>
+      <%= form.text_field :engine_size, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row mb-3">
+    <div class="col-md-1">
+      <%= form.check_box :turbo, class: "form-check-input" %>
+      <%= form.label :turbo, "Turbo", class: "form-check-label" %>
+    </div>
+    <div class="col-md-2">
+      <%= form.check_box :automatic, class: "form-check-input" %>
+      <%= form.label :automatic, "Automático", class: "form-check-label" %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit "Cadastrar Modelo", class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>

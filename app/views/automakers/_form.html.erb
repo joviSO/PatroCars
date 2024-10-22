@@ -1,0 +1,40 @@
+<%= form_with(model: automaker) do |form| %>
+  <% if automaker.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(automaker.errors.count, "error") %> prohibited this automaker from being saved:</h2>
+
+      <ul>
+        <% automaker.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <div class="row">
+      <div class="col-md-6">
+        <%= form.label :name, "Nome", class: "form-label" %>
+        <%= form.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= form.label :country, "País", class: "form-label" %>
+        <%= form.text_field :country, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <div class="row">
+      <div class="col-md-6">
+        <%= form.label :fundation_year, "Ano de Fundação", class: "form-label" %>
+        <%= form.number_field :fundation_year, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit "Cadastrar Fabricante", class: "btn btn-primary" %>
+  </div>
+<% end %>

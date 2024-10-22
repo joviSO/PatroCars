@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle_model: one
+  color: MyString
+  manufacturing_year: 1
+  model_year: 1
+  value: 9.99
+  license_plate: MyString
+  sold: false
+
+two:
+  vehicle_model: two
+  color: MyString
+  manufacturing_year: 1
+  model_year: 1
+  value: 9.99
+  license_plate: MyString
+  sold: false

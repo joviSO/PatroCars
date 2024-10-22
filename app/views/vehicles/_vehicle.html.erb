@@ -1,0 +1,35 @@
+<div id="<%= dom_id vehicle %>" class="card mb-3">
+  <div class="card-header bg-primary text-white">
+    <h5 class="mb-0">Detalhes do Veículo</h5>
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title"><%= vehicle.vehicle_model.name %></h5>
+
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-1">
+          <strong>Cor:</strong> <%= vehicle.color %>
+        </p>
+        <p class="mb-1">
+          <strong>Ano de Fabricação:</strong> <%= vehicle.manufacturing_year %>
+        </p>
+        <p class="mb-1">
+          <strong>Ano do Modelo:</strong> <%= vehicle.model_year %>
+        </p>
+      </div>
+
+      <div class="col-md-6">
+        <p class="mb-1">
+          <strong>Valor:</strong> <%= number_to_currency(vehicle.value, unit: 'R$') %>
+        </p>
+        <p class="mb-1">
+          <strong>Placa:</strong> <%= vehicle.license_plate %>
+        </p>
+        <p class="mb-1">
+          <strong>Vendido:</strong> <%= vehicle.sold ? 'Sim' : 'Não' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

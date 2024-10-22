@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Editar Modelo</h1>
+
+  <%= render "form", vehicle_model: @vehicle_model %>
+
+  <br>
+
+  <div class="row">
+    <div class="col-md-auto">
+      <%= link_to "Mostrar esse Modelo", @vehicle_model, class: "btn btn-outline-success"%>
+    </div>
+    <div class="col-md-auto">
+      <%= button_to "Lista de Modelos", vehicle_models_path, method: :get, class: "btn btn-outline-success" %>
+    </div>
+  </div>
+</div>
+
