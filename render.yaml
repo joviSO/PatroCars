@@ -1,0 +1,23 @@
+databases:
+  - name: PatroCars
+    databaseName: PatroCars
+    user: joviSO
+    plan: free
+
+services:
+  - type: web
+    name: PatroCars
+    runtime: ruby
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    startCommand: "bundle exec rails server"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mysite
+          property: connectionString
+      - key: 52307dda38bba6e0fc3b582684a90a6b
+        sync: false
+      - key: WEB_CONCURRENCY
+        value: 2 # sensible default

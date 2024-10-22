@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: patro_cars_production
-  username: patro_cars
-  password: <%= ENV["PATRO_CARS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
