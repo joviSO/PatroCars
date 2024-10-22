@@ -35,6 +35,6 @@
   </div>
 
   <div>
-    <%= form.submit "Cadastrar Fabricante", class: "btn btn-primary" %>
+    <%= form.submit @automaker.persisted? ? "Editar Fabrica" : "Cadastrar Fabrica", class: "btn btn-primary btn-block" %>
   </div>
 <% end %>

@@ -54,6 +54,6 @@
   </div>
 
   <div>
-    <%= form.submit "Cadastrar Veículo", class: "btn btn-primary btn-block" %>
+    <%= form.submit @vehicle.persisted? ? "Editar Veículo" : "Cadastrar Veículo", class: "btn btn-primary btn-block" %>
   </div>
 <% end %>

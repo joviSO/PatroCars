@@ -16,7 +16,7 @@
                   <h5 class="card-title"><%= automaker.name %></h5>
                   <p class="card-text">
                     <strong>Pais:</strong> <%= automaker.country %><br>
-                    <strong>Ano de Criação: </strong> <%= automaker.fundation_year %>
+                    <strong>Ano de Fundação: </strong> <%= automaker.fundation_year %>
                     <strong>Veículos:</strong> <%= automaker.vehicles.count %>
                   </p>
                 </div>
@@ -29,7 +29,7 @@
   </div>
 
   <div class="text-center mb-4">
-    <%= button_to "Novo Fabricante", new_automaker_path, class: "btn btn-success mb-2", method: :get %>
+    <%= button_to "Novo Fabricante", new_automaker_path, class: "btn btn-primary mb-2", method: :get %>
     <%= button_to "Modelos de Carros", vehicle_models_path, class: "btn btn-success mb-2", method: :get %>
     <%= button_to "Veículos", vehicles_path, class: "btn btn-success", method: :get %>
   </div>

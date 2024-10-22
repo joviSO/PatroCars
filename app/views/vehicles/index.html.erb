@@ -16,7 +16,7 @@
                   <h5 class="card-title"><%= vehicle.vehicle_model.automaker.name %></h5>
                   <p class="card-text">
                     <strong>Modelo:</strong> <%= vehicle.vehicle_model.name %><br>
-                    <strong>Ano:</strong> <%= vehicle.model_year %><br>
+                    <strong>Ano do Modelo:</strong> <%= vehicle.manufacturing_year %><br>
                     <strong>Cor:</strong> <%= vehicle.color %><br>
                     <strong>Valor:</strong> <%= number_to_currency(vehicle.value, unit: 'R$') %><br>
                     <strong>Placa:</strong> <%= vehicle.license_plate %>
@@ -31,7 +31,7 @@
   </div>
 
   <div class="text-center mb-4">
-    <%= button_to "Cadastrar Veículo", new_vehicle_path, class: "btn btn-success mb-2", method: :get %>
+    <%= button_to "Cadastrar Veículo", new_vehicle_path, class: "btn btn-primary mb-2", method: :get %>
     <%= button_to "Modelos de Carros", vehicle_models_path, class: "btn btn-success mb-2", method: :get %>
     <%= button_to "Fábricas", automakers_path, class: "btn btn-success", method: :get %>
   </div>
